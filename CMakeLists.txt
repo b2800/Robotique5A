@@ -5,9 +5,10 @@ project(projet_drone)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  geometry_msgs
+  geometry-msgs
   roscpp
-  sensor_msg
+  rospy
+  sensor_msgs
   std_msgs
 )
 
@@ -68,7 +69,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   geometry_msgs#   std_msgs
+#   sensor_msgs#   std_msgs
 # )
 
 ################################################
@@ -103,7 +104,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES projet_drone
-#  CATKIN_DEPENDS geometry_msgs roscpp sensor_msg std_msgs
+#  CATKIN_DEPENDS geometry-msgs roscpp rospy sensor_msgs std_msgs
 #  DEPENDS system_lib
 )
 
