@@ -1,0 +1,10 @@
+<launch>
+<node pkg="apriltags_ros" type="apriltag_detector_node" name="apriltag_detector"
+output="screen">
+<remap from="image_rect" to="/ardrone/front/image_raw" />
+<remap from="camera_info" to="/ardrone/front/camera_info" />
+<rosparam param="tag_descriptions">
+[{id: 0, size: 0.163513}]
+</rosparam>
+</node>
+</launch>
