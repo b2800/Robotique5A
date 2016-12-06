@@ -38,11 +38,11 @@ class Drone:
         self.nextWaypointIndex = 0
         self.altitudeRef = 0.8 # in meters
         self.k_z = 1.5
-        self.k_xy = 0.85
+        self.k_xy = 0.25
         self.k_angle = 3
-        self.enable_Z = False
+        self.enable_Z = True
         self.enable_XY = True
-        self.enable_angular_Z = True
+        self.enable_angular_Z = False
         
         # Timer related
         self.timer = 4   # in seconds
@@ -128,9 +128,8 @@ class Drone:
         return isCloseEnough(tag_xc, self.middle_value, self.center_threshold) and isCloseEnough(tag_yc, self.middle_value, self.center_threshold)        
         
     def FlyToLastKnownTagPosition(self, data):
-        return
-        self.cmd_x = self.lastKnownTagDirection[0] * self.k_xy
-        self.cmd_y = self.lastKnownTagDirection[1] * self.k_xy
+        self.cmd_x = self.lastKnownTagDirection[0] * self.k_xy * 0.5
+        self.cmd_y = self.lastKnownTagDirection[1] * self.k_xy * 0.5
 
 
     def PublishCommands(self):
